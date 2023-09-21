@@ -1,21 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import LogIn from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/LogIn.jsx';
 
-export default function App() {
-  console.log("hola uwu")
-  return (
-    <View style={styles.container}>
-      <Text>Hola mundo!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const App = () => {
+  return(
+    <SafeAreaView style={styles.root}>
+      <LogIn LogIn/>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#614bc3',
   },
 });
+
+export default App;
