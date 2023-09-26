@@ -1,1 +1,1 @@
-export {default} from 'C:/Users/GWTC/Desktop/SaludMovil/src/components/CustomButton'
+ export {default} from './CustomButton'
