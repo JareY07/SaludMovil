@@ -1,11 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView} from 'react-native';
-import LogIn from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/LogIn.jsx';
+import LogIn from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/SignIn/LogIn';
+import SignUp from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/SignUp/SignUp';
 
 const App = () => {
   return(
     <SafeAreaView style={styles.root}>
-      <LogIn LogIn/>
+      <LogIn SignUp/>
     </SafeAreaView>
   )
 }
