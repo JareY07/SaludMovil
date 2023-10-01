@@ -6,7 +6,7 @@ import SignUp from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/SignUp/SignUp';
 const App = () => {
   return(
     <SafeAreaView style={styles.root}>
-      <LogIn SignUp/>
+      <SignUp />
     </SafeAreaView>
   )
 }
