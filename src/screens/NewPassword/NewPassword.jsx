@@ -4,11 +4,13 @@ import logo from 'C:/Users/GWTC/Desktop/SaludMovil/assets/logoSM.png'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 
-const ConfirmEmail = () => {
+
+const NewPassword = () => {
 
     const [code, setCode] = useState('');
+    const [newPassword, setNewPassword] = useState('');
 
-    const OnConfirmPressed = () => {
+    const OnSubmitPressed = () => {
         console.warn("Te has registrado")
     }
 
@@ -24,20 +26,21 @@ const ConfirmEmail = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
 
-        <Text style={styles.is}>Confirmacion de correo electronico</Text>
+        <Text style={styles.is}>Cambiar contraseña</Text>
 
         <CustomInput 
-        placeholder="Codigo de confirmacion"
+        placeholder="Codigo"
          value={code} 
          setValue={setCode}/>
 
+        <CustomInput 
+        placeholder="Nueva Contraseña"
+         value={newPassword} 
+         setValue={setNewPassword}/>
 
-        <CustomButton text="Confirmar" onPress={OnConfirmPressed} />
 
-        <CustomButton 
-        text="Reenvar codigo" 
-        onPress={OnResendPressed} 
-        type={"SECONDARY"}/>
+        <CustomButton text="Cambiar" onPress={OnSubmitPressed} />
+
 
          <CustomButton 
         text="Volver al Inicio de Sesion" 
@@ -69,4 +72,4 @@ const styles = StyleSheet.create({
 
 
 
-export default ConfirmEmail;
+export default NewPassword;

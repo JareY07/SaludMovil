@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   container_SECONDARY: {
     borderColor: '#41C2C5',
-    borderWidth: 2,
+    borderWidth: 3,
   },
   container_TERTIARY: {
     borderColor: '#614bc3',
