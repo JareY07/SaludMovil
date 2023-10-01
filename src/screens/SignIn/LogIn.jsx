@@ -41,9 +41,9 @@ const LogIn = () => {
 
 
         <CustomInput 
-        placeholder="Constraseña" 
-        value={password} 
-        setValue={setPassword} 
+        placeholder="Constraseña"
+        value={password}
+        setValue={setPassword}
         secureTextEntry={true}/>
 
         <CustomButton 
@@ -53,8 +53,10 @@ const LogIn = () => {
 
         <CustomButton text="INICIAR SESIÓN" onPress={OnLogInPressed} />
 
+
+
         <CustomButton 
-        text="¿Aún no tienes cuenta? ¡Crea una!" 
+        text= {`¿Aún no tienes cuenta? Crea una`}
         onPress={OnSignInPressed} 
         type={"TERTIARY"}/>
         </View>
@@ -76,6 +78,9 @@ const styles = StyleSheet.create({
         maxWidth: 500,
         maxHeight: 400,
     },
+    link:{
+        color: '#41C2C5'
+    }
 })
 
 

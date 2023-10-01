@@ -4,24 +4,25 @@ import logo from 'C:/Users/GWTC/Desktop/SaludMovil/assets/logoSM.png'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 
-const LogIn = () => {
+const SignUp = () => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordRepeat, setPasswordRepeat] = useState('');
 
-    const OnSignUpPressed = () => {
-        console.warn("Has Iniciado Sesion")
+    const OnRegisterPressed = () => {
+        console.warn("Te has registrado")
     }
 
     const OnSignInPressed = () => {
-        console.warn("vas a crear una cuenta!")
+        console.warn("Volveras al inicio de sesion")
     }
 
     const OnForgotPasswordPressed = () => {
         console.warn("Vas a recuperar tu contraseña")
     }
 
-    const {height} = useWindowDimensions();
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
@@ -29,10 +30,16 @@ const LogIn = () => {
         <Text style={styles.is}>Registro</Text>
 
         <CustomInput 
-        placeholder="Correo electronico"
+        placeholder="Nombre de Usuario"
          value={username} 
          setValue={setUsername} 
-         secureTextEntry={false} />
+         secureTextEntry={false}/>
+
+        <CustomInput 
+        placeholder="Correo Electronico"
+         value={email} 
+         setValue={setEmail} 
+         secureTextEntry={false}/>
 
 
         <CustomInput 
@@ -41,15 +48,18 @@ const LogIn = () => {
         setValue={setPassword} 
         secureTextEntry={true}/>
 
-        <CustomButton 
-        text="Olvidaste tu contraseña?" 
-        onPress={OnForgotPasswordPressed} 
-        type={"TERTIARY"}/>
+        <CustomInput 
+        placeholder="Repetir constraseña" 
+        value={passwordRepeat} 
+        setValue={setPasswordRepeat} 
+        secureTextEntry={true}/>
 
-        <CustomButton text="INICIAR SESIÓN" onPress={OnLogInPressed} />
+        <Text style={styles.text}>Al registrarte estas aceptando nuestras politicas de <Text style={styles.link}>términos y condiciones</Text></Text>
 
-        <CustomButton 
-        text="¿Aún no tienes cuenta? ¡Crea una!" 
+        <CustomButton text="REGISTRARSE" onPress={OnRegisterPressed} />
+
+         <CustomButton 
+        text="¿Ya tienes cuenta?" 
         onPress={OnSignInPressed} 
         type={"TERTIARY"}/>
         </View>
@@ -61,16 +71,19 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: '#c8ffe0',
         fontWeight: "bold",
-        padding: 30
+        padding: 70
     },
     root: {
         alignItems: 'center',
     },
-    logo: {
-        width: '85%',
-        maxWidth: 500,
-        maxHeight: 400,
+    text: {
+        marginVertical: 15,
+        marginHorizontal: 53,
+        color: '#c8ffe0'
     },
+    link: {
+        color: '#33BBC5'
+    }
 })
 
 

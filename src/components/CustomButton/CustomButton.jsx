@@ -11,26 +11,32 @@ const CustomButton = ({onPress, text, type = "PRIMARY"}) => {
 
 const styles = StyleSheet.create({
   container: {
+    width: '80%',
     alignItems: 'center',
+    marginVertical: 5,
     borderRadius: 10,
+    padding: 12
   },
   container_PRIMARY: {
-    width: '70%',
-    height: '6.5%',
     backgroundColor: '#33BBC5',
     borderColor: '#41C2C5',
     borderWidth: 1,
   },
+  container_SECONDARY: {
+    borderColor: '#41C2C5',
+    borderWidth: 2,
+  },
   container_TERTIARY: {
     borderColor: '#614bc3',
-    // paddingLeft: '15%'
   },
-  
   text_PRIMARY: {
     fontWeight: 'bold',
     color: '#F5F5F5',
     alignItems: 'center',
-    paddingTop: '3%'
+    paddingTop: '1%'
+  },
+  text_SECONDARY: {
+    color: '#F5F5F5'
   },
   text_TERTIARY:{
     color: '#c8ffe0',
