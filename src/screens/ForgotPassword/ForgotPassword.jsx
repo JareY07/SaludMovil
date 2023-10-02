@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 const ForgotPassword = () => {
 
     const navigation = useNavigation();
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
 
     const OnSendPressed = () => {
         navigation.navigate('NewPassword')
@@ -25,9 +25,9 @@ const ForgotPassword = () => {
         <Text style={styles.is}>Cambiar contraseña</Text>
 
         <CustomInput 
-        placeholder="Nombre de usuario"
-         value={username} 
-         setValue={setUsername}/>
+        placeholder="Correo Electronico"
+         value={email} 
+         setValue={setEmail}/>
 
 
         <CustomButton text="Enviar" onPress={OnSendPressed} />
