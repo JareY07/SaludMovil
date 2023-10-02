@@ -1,23 +1,23 @@
 import React, {useState} from 'react'
 import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native'
-import logo from 'C:/Users/GWTC/Desktop/SaludMovil/assets/logoSM.png'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
-
+import { useNavigation } from '@react-navigation/native'
 const ConfirmEmail = () => {
 
+    const navigation = useNavigation()
     const [code, setCode] = useState('');
 
     const OnConfirmPressed = () => {
-        console.warn("Te has registrado")
+        navigation.navigate('HomeScreen')
     }
 
     const OnSignInPressed = () => {
-        console.warn("Volveras al inicio de sesion")
+        navigation.navigate('SignIn')
     }
 
     const OnResendPressed = () => {
-        console.warn("Vas a recuperar tu contraseña")
+        console.warn("23427")
     }
 
     return(
@@ -49,10 +49,11 @@ const ConfirmEmail = () => {
 
 const styles = StyleSheet.create({
     is: {
-        fontSize: 30,
-        color: '#c8ffe0',
+        fontSize: 25,
+        color: '#6D5AC6',
         fontWeight: "bold",
-        padding: 70
+        padding: 70,
+        textAlign: 'center'
     },
     root: {
         alignItems: 'center',

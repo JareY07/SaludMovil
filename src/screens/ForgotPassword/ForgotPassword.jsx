@@ -1,25 +1,22 @@
 import React, {useState} from 'react'
 import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native'
-import logo from 'C:/Users/GWTC/Desktop/SaludMovil/assets/logoSM.png'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
-
+import { useNavigation } from '@react-navigation/native'
 
 const ForgotPassword = () => {
 
+    const navigation = useNavigation();
     const [username, setUsername] = useState('');
 
     const OnSendPressed = () => {
-        console.warn("Te has registrado")
+        navigation.navigate('NewPassword')
     }
 
     const OnSignInPressed = () => {
-        console.warn("Volveras al inicio de sesion")
+        navigation.navigate()
     }
 
-    const OnResendPressed = () => {
-        console.warn("Vas a recuperar tu contraseña")
-    }
 
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -35,11 +32,6 @@ const ForgotPassword = () => {
 
         <CustomButton text="Enviar" onPress={OnSendPressed} />
 
-        <CustomButton 
-        text="Reenvar codigo" 
-        onPress={OnResendPressed} 
-        type={"SECONDARY"}/>
-
          <CustomButton 
         text="Volver al Inicio de Sesion" 
         onPress={OnSignInPressed} 
@@ -50,10 +42,12 @@ const ForgotPassword = () => {
 
 const styles = StyleSheet.create({
     is: {
-        fontSize: 30,
-        color: '#c8ffe0',
+        fontSize: 25,
+        color: '#6c25c6',
         fontWeight: "bold",
-        padding: 70
+        padding: 70,
+        textAlign: 'center'
+        
     },
     root: {
         alignItems: 'center',

@@ -1,33 +1,46 @@
 import React, {useState} from 'react'
 import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native'
-import logo from 'C:/Users/GWTC/Desktop/SaludMovil/assets/logoSM.png'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
+import { useNavigation } from '@react-navigation/native'
 
 const SignUp = () => {
 
     const [username, setUsername] = useState('');
+    const [name, setName] = useState('');
+    const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
     const OnRegisterPressed = () => {
-        console.warn("Te has registrado")
+        navigation.navigate('ConfirmEmail')
     }
 
     const OnSignInPressed = () => {
-        console.warn("Volveras al inicio de sesion")
+        navigation.navigate('SignIn')
     }
 
-    const OnForgotPasswordPressed = () => {
-        console.warn("Vas a recuperar tu contraseña")
-    }
+
+    const navigation = useNavigation();
 
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
 
         <Text style={styles.is}>Registro</Text>
+
+        <CustomInput 
+        placeholder="Nombre(s)"
+         value={name} 
+         setValue={setName} 
+         secureTextEntry={false}/>
+
+        <CustomInput 
+        placeholder="Apellidos"
+         value={lastname} 
+         setValue={setLastname} 
+         secureTextEntry={false}/>
 
         <CustomInput 
         placeholder="Nombre de Usuario"
@@ -54,7 +67,6 @@ const SignUp = () => {
         setValue={setPasswordRepeat} 
         secureTextEntry={true}/>
 
-        <Text style={styles.text}>Al registrarte estas aceptando nuestras politicas de <Text style={styles.link}>términos y condiciones</Text></Text>
 
         <CustomButton text="REGISTRARSE" onPress={OnRegisterPressed} />
 
@@ -68,10 +80,11 @@ const SignUp = () => {
 
 const styles = StyleSheet.create({
     is: {
-        fontSize: 30,
-        color: '#c8ffe0',
+        fontSize: 25,
+        color: '#6D5AC6',
         fontWeight: "bold",
-        padding: 70
+        padding: 70,
+        textAlign: 'center'
     },
     root: {
         alignItems: 'center',

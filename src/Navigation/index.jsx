@@ -7,6 +7,7 @@ import SignUp from 'C:/Users/GWTC/Desktop/SaludMovil/src/screens/SignUp/SignUp';
 import ConfirmEmail from '../screens/ConfirmEmail';
 import ForgotPassword from '../screens/ForgotPassword';
 import NewPassword from '../screens/NewPassword';
+import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,12 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name= "SignIn" component= {LogIn} />
-      </Stack.Navigator>
+        <Stack.Screen name= "SignUp" component= {SignUp} />
+        <Stack.Screen name= "ConfirmEmail" component= {ConfirmEmail} />
+        <Stack.Screen name= "ForgotPassword" component= {ForgotPassword} />
+        <Stack.Screen name= "NewPassword" component= {NewPassword} />
+        <Stack.Screen name= "HomeScreen" component= {HomeScreen} />
+      </Stack.Navigator> 
     </NavigationContainer>
   );
 };

@@ -15,15 +15,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 5,
     borderRadius: 10,
-    padding: 12
+    padding: 10
   },
   container_PRIMARY: {
-    backgroundColor: '#33BBC5',
+    backgroundColor: '#614bc3',
     borderColor: '#41C2C5',
-    borderWidth: 1,
+    borderWidth: 2,
   },
   container_SECONDARY: {
-    borderColor: '#41C2C5',
+    borderColor: '#614bc3',
     borderWidth: 3,
   },
   container_TERTIARY: {
@@ -31,15 +31,15 @@ const styles = StyleSheet.create({
   },
   text_PRIMARY: {
     fontWeight: 'bold',
-    color: '#F5F5F5',
+    color: '#f5f5f5',
     alignItems: 'center',
     paddingTop: '1%'
   },
   text_SECONDARY: {
-    color: '#F5F5F5'
+    color: '#614bc3'
   },
   text_TERTIARY:{
-    color: '#c8ffe0',
+    color: '#614bc3',
     paddingBottom: '4%',
   }
 })
