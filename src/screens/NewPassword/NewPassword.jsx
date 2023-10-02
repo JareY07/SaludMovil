@@ -25,7 +25,7 @@ const NewPassword = () => {
         <Text style={styles.is}>Cambiar contraseña</Text>
 
         <CustomInput 
-        placeholder="Confirmar Codigo"
+        placeholder="Codigo de confirmación"
          value={code} 
          setValue={setCode}/>
 

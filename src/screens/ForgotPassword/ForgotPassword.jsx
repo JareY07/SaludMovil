@@ -22,7 +22,7 @@ const ForgotPassword = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
 
-        <Text style={styles.is}>Cambiar contraseña</Text>
+        <Text style={styles.is}>Ingrese su Correo</Text>
 
         <CustomInput 
         placeholder="Correo Electronico"
