@@ -43,7 +43,7 @@ const ForgotPassword = () => {
 const styles = StyleSheet.create({
     is: {
         fontSize: 25,
-        color: '#6c25c6',
+        color: '#614bc3',
         fontWeight: "bold",
         padding: 70,
         textAlign: 'center'

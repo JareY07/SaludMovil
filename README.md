@@ -2,6 +2,8 @@
 
 Aplicacion de salud para personas mayores - react Native
 
+# Inicando servidor
+
 # Paquetes instalados durante el desarrollo del proyecto
 
 npx expo install react-native-screens@3.22.0

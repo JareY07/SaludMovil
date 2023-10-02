@@ -70,7 +70,7 @@ const LogIn = () => {
 const styles = StyleSheet.create({
     is: {
         fontSize: 25,
-        color: '#6D5AC6',
+        color: '#614bc3',
         fontWeight: "bold",
         padding: 30,
         textAlign: 'center'

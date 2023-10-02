@@ -25,7 +25,7 @@ const NewPassword = () => {
         <Text style={styles.is}>Cambiar contraseña</Text>
 
         <CustomInput 
-        placeholder="Codigo"
+        placeholder="Confirmar Codigo"
          value={code} 
          setValue={setCode}/>
 
@@ -49,7 +49,7 @@ const NewPassword = () => {
 const styles = StyleSheet.create({
     is: {
         fontSize: 25,
-        color: '#c8ffe0',
+        color: '#614bc3',
         fontWeight: "bold",
         padding: 70,
         textAlign: 'center'
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     text: {
         marginVertical: 15,
         marginHorizontal: 53,
-        color: '#c8ffe0'
+        color: '#c8ffe0',
     },
     link: {
         color: '#33BBC5'
