@@ -1,2 +1,12 @@
 # SaludMovil
+
 Aplicacion de salud para personas mayores - react Native
+
+# Paquetes instalados durante el desarrollo del proyecto
+
+npx expo install react-native-screens@3.22.0
+npx expo install react-native-safe-area-context@4.6.3
+npm install @react-navigation/native-stack
+npm install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native
+npx expo install react-native@0.72.5
