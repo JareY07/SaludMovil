@@ -35,7 +35,7 @@ const LogIn = () => {
         resizeMode="contain"
         />
 
-        <Text style={styles.is}>Inicio de Sesión</Text>
+        <Text style={styles.is}>Inicio deión</Text>
 
         <CustomInput 
         placeholder="Correo electronico"

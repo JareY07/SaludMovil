@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     }
 
     const OnSignInPressed = () => {
-        navigation.navigate()
+        navigation.navigate('SignIn')
     }
 
 
