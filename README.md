@@ -6,6 +6,7 @@ Aplicacion de salud para personas mayores - react Native
 
 # Paquetes instalados durante el desarrollo del proyecto
 
+npm install -g expo-cli
 npx expo install react-native@0.72.4
 npx expo install react-native-screens@3.22.0
 npx expo install react-native-safe-area-context@4.6.3

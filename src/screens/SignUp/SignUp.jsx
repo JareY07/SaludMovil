@@ -3,21 +3,18 @@ import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 're
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
+import {useForm} from 'react-hook-form';
 
 const SignUp = () => {
 
-    const [username, setUsername] = useState('');
-    const [name, setName] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [passwordRepeat, setPasswordRepeat] = useState('');
-
+    const {control, handleSubmit, watch } = useForm();
+    const pass = watch('password');
     const OnRegisterPressed = () => {
         navigation.navigate('ConfirmEmail')
     }
 
     const OnSignInPressed = () => {
+        console.log(data)
         navigation.navigate('SignIn')
     }
 
@@ -31,44 +28,71 @@ const SignUp = () => {
         <Text style={styles.is}>Registro</Text>
 
         <CustomInput 
-        placeholder="Nombre(s)"
-         value={name} 
-         setValue={setName} 
-         secureTextEntry={false}/>
+         name= 'firstName' 
+         placeholder="Primer Nombre"
+         control={control}
+        rules ={{required: "Este campo es obligatorio.",
+        pattern: {
+        value: /^[A-Za-z]+$/,
+        message: 'No se pueden incluir simbolos ni espacios'}}}
+        />
 
         <CustomInput 
-        placeholder="Apellidos"
-         value={lastname} 
-         setValue={setLastname} 
-         secureTextEntry={false}/>
+         name='lastname' 
+         placeholder="Primer Apellido"
+         control={control}
+         rules ={{required: "Este campo es obligatorio.",
+         pattern: {
+            value: /[A-Za-z]+$/,
+            message: 'No se pueden incluir simbolos ni espacios'}}}
+        />
 
         <CustomInput 
-        placeholder="Nombre de Usuario"
-         value={username} 
-         setValue={setUsername} 
-         secureTextEntry={false}/>
+         name="username" 
+         placeholder="Nombre de Usuario"
+         control={control}
+        rules ={{required: "Este campo es obligatorio.", minLength:{
+            value: 3,
+            message: 'El nombre de usuario es muy corto'
+        }, maxLength: {
+            value: 17,
+            message: 'El nombre de usuario es demasiado largo'
+        }}}
+        />
 
         <CustomInput 
-        placeholder="Correo Electronico"
-         value={email} 
-         setValue={setEmail} 
-         secureTextEntry={false}/>
+         name='email' 
+         placeholder="Correo Electronico"
+         control={control}
+        rules ={{required: "Este campo es obligatorio.",
+        pattern: {
+            value: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/,
+            message: 'Correo Electronico Invalido'}}}
+        />
 
 
-        <CustomInput 
+        <CustomInput
+        name='password'
         placeholder="Constraseña" 
-        value={password} 
-        setValue={setPassword} 
-        secureTextEntry={true}/>
+        secureTextEntry
+        control={control}
+        rules ={{required: "Este campo es obligatorio.", minLength: {
+            value: 8,
+            message: 'La contraseña debe de tener minimamente 8 caracteres'
+            }}}
+        />
 
-        <CustomInput 
-        placeholder="Repetir constraseña" 
-        value={passwordRepeat} 
-        setValue={setPasswordRepeat} 
-        secureTextEntry={true}/>
+        <CustomInput
+        name='repeatPassword'
+        placeholder="Repetir constraseña"
+        secureTextEntry
+        control={control}
+        rules ={{required: "Este campo es obligatorio.",
+            validate: value => value === pass || 'Las contraseñas no coinciden'}}
+        />
 
 
-        <CustomButton text="REGISTRARSE" onPress={OnRegisterPressed} />
+        <CustomButton text="REGISTRARSE" onPress={handleSubmit(OnRegisterPressed)} />
 
          <CustomButton 
         text="¿Ya tienes cuenta?" 

@@ -3,12 +3,11 @@ import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 're
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
+import {useForm} from 'react-hook-form';
 
 const NewPassword = () => {
 
-    const navigation = useNavigation();
-    const [code, setCode] = useState('');
-    const [newPassword, setNewPassword] = useState('');
+    const {control, handleSubmit} = useForm();
 
     const OnSubmitPressed = () => {
         navigation.navigate('HomeScreen')
@@ -18,6 +17,8 @@ const NewPassword = () => {
         navigation.navigate('SignIn')
     }
 
+    const navigation = useNavigation();
+
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
@@ -25,17 +26,22 @@ const NewPassword = () => {
         <Text style={styles.is}>Cambiar contraseña</Text>
 
         <CustomInput 
+        name= 'code'
         placeholder="Codigo de confirmación"
-         value={code} 
-         setValue={setCode}/>
+        control={control} 
+        rules={{required: 'Este campo es requerido'}}/>
 
         <CustomInput 
-        placeholder="Nueva Contraseña"
-         value={newPassword} 
-         setValue={setNewPassword}/>
+        name='NewPassword'
+         placeholder="Nueva Contraseña"
+         control={control}
+         rules={{required: 'Este campo es requerido', minLength: {
+            value: 8,
+            message: 'La contraseña debe de tener al menos 8 caracteres'
+         }}}/>
 
 
-        <CustomButton text="Cambiar" onPress={OnSubmitPressed} />
+        <CustomButton text="Cambiar" onPress={handleSubmit(OnSubmitPressed)} />
 
 
          <CustomButton 

@@ -3,10 +3,11 @@ import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 're
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
+import {useForm} from 'react-hook-form'
+
 const ConfirmEmail = () => {
 
-    const navigation = useNavigation()
-    const [code, setCode] = useState('');
+    const {control, handleSubmit} = useForm();
 
     const OnConfirmPressed = () => {
         navigation.navigate('HomeScreen')
@@ -20,6 +21,7 @@ const ConfirmEmail = () => {
         console.warn("23427")
     }
 
+    const navigation = useNavigation();
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={[styles.root]}>
@@ -27,12 +29,13 @@ const ConfirmEmail = () => {
         <Text style={styles.is}>Confirmacion de correo electronico</Text>
 
         <CustomInput 
+        name = 'code'
         placeholder="Codigo de confirmacion"
-         value={code} 
-         setValue={setCode}/>
+        control={control}
+        rules={{required: 'Este campo es requerido'}}/>
 
 
-        <CustomButton text="Confirmar" onPress={OnConfirmPressed} />
+        <CustomButton text="Confirmar" onPress={handleSubmit(OnConfirmPressed)} />
 
         <CustomButton 
         text="Reenvar codigo" 

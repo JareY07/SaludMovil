@@ -3,11 +3,11 @@ import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 're
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
+import {useForm} from 'react-hook-form';
 
 const ForgotPassword = () => {
 
-    const navigation = useNavigation();
-    const [email, setEmail] = useState('');
+    const {control, handleSubmit } = useForm();
 
     const OnSendPressed = () => {
         navigation.navigate('NewPassword')
@@ -16,6 +16,7 @@ const ForgotPassword = () => {
     const OnSignInPressed = () => {
         navigation.navigate('SignIn')
     }
+    const navigation = useNavigation();
 
 
     return(
@@ -25,12 +26,16 @@ const ForgotPassword = () => {
         <Text style={styles.is}>Ingrese su Correo</Text>
 
         <CustomInput 
+        name='email'
         placeholder="Correo Electronico"
-         value={email} 
-         setValue={setEmail}/>
+        control={control}
+        rules ={{required: "El campo es obligatorio", pattern: {
+            value: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+        }}}
+        />
 
 
-        <CustomButton text="Enviar" onPress={OnSendPressed} />
+        <CustomButton text="Enviar" onPress={handleSubmit(OnSendPressed)} />
 
          <CustomButton 
         text="Volver al Inicio de Sesion" 
