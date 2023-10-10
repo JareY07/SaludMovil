@@ -42,8 +42,8 @@ const LogIn = () => {
         placeholder="Correo Electronico"
         control={control}
         rules ={{required: "El Correo Electronico es requerido",
-        pattern: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/, 
-    message: 'El correo es invalido'}}
+        pattern: {value: /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/, 
+        message: 'El correo es invalido'}}}
         />
 
 

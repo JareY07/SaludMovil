@@ -30,7 +30,7 @@ const ConfirmEmail = () => {
 
         <CustomInput 
         name = 'code'
-        placeholder="Codigo de confirmacion"
+        placeholder="Codigo de confirmación"
         control={control}
         rules={{required: 'Este campo es requerido'}}/>
 

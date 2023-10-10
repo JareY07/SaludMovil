@@ -5,16 +5,30 @@ import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 import {useForm} from 'react-hook-form';
 
+
 const SignUp = () => {
+
+    const API_REGISTER = 'http://127.0.0.1:8000/api/users/register';
+    let data = {
+        firstName: 'firstName',
+        lastName: 'lastname',
+        Username: 'username',
+        Email: 'email',
+        passWord: 'password'
+
+    }
 
     const {control, handleSubmit, watch } = useForm();
     const pass = watch('password');
-    const OnRegisterPressed = () => {
+
+    const OnRegisterPressed = (data) => {
+        
+        console.log(data)
         navigation.navigate('ConfirmEmail')
     }
 
     const OnSignInPressed = () => {
-        console.log(data)
+        
         navigation.navigate('SignIn')
     }
 
@@ -43,7 +57,7 @@ const SignUp = () => {
          control={control}
          rules ={{required: "Este campo es obligatorio.",
          pattern: {
-            value: /[A-Za-z]+$/,
+            value: /^[A-Za-z]+$/,
             message: 'No se pueden incluir simbolos ni espacios'}}}
         />
 
@@ -57,6 +71,9 @@ const SignUp = () => {
         }, maxLength: {
             value: 17,
             message: 'El nombre de usuario es demasiado largo'
+        }, pattern: {
+            value: /^[a-zA-Z0-9_-]+$/,
+            message: 'El nombre de usuario debe de ser coherente.'
         }}}
         />
 
@@ -77,9 +94,14 @@ const SignUp = () => {
         secureTextEntry
         control={control}
         rules ={{required: "Este campo es obligatorio.", minLength: {
-            value: 8,
+            value: 3,
             message: 'La contraseña debe de tener minimamente 8 caracteres'
-            }}}
+            },
+            pattern: {
+            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ])$/,
+            message: 'Se requiere al menos una minuscula, una mayusculla, un numero y un caracter especial.'
+            },
+        }}
         />
 
         <CustomInput

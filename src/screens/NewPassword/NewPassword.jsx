@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native'
 import CustomInput from '../../components/CustomInputs/customInputs'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 import {useForm} from 'react-hook-form';
+
 
 const NewPassword = () => {
 
@@ -27,7 +28,7 @@ const NewPassword = () => {
 
         <CustomInput 
         name= 'code'
-        placeholder="Codigo de confirmación"
+        placeholder="Código de confirmación"
         control={control} 
         rules={{required: 'Este campo es requerido'}}/>
 
