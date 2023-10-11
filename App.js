@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, {Fragment} from 'react'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 
 import Navigation from './src/Navigation'

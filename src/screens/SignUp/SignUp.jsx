@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native'
-import CustomInput from '../../components/CustomInputs/customInputs'
-import CustomButton from '../../components/CustomButton'
-import { useNavigation } from '@react-navigation/native'
-import {useForm} from 'react-hook-form';
+import React, { useState } from 'react';
+import {Text, View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native';
+import CustomInput from '../../components/CustomInputs/customInputs';
+import CustomButton from '../../components/CustomButton';
+import { useNavigation } from '@react-navigation/native';
+import { useForm } from 'react-hook-form';
 
 
 const SignUp = () => {
