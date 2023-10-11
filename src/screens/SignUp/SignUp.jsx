@@ -94,11 +94,11 @@ const SignUp = () => {
         secureTextEntry
         control={control}
         rules ={{required: "Este campo es obligatorio.", minLength: {
-            value: 3,
+            value: 8,
             message: 'La contraseña debe de tener minimamente 8 caracteres'
             },
             pattern: {
-            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ])$/,
+            value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}/,
             message: 'Se requiere al menos una minuscula, una mayusculla, un numero y un caracter especial.'
             },
         }}
@@ -109,8 +109,7 @@ const SignUp = () => {
         placeholder="Repetir constraseña"
         secureTextEntry
         control={control}
-        rules ={{required: "Este campo es obligatorio.",
-            validate: value => value === pass || 'Las contraseñas no coinciden'}}
+        rules ={{validate: value => value === pass || 'Las contraseñas no coinciden'}}
         />
 
 
